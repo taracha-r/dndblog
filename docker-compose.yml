@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  dndblog:
+    build: .
+    command: sh run.sh
+    environment: 
+      - WAIT_FOR_DB=1
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
