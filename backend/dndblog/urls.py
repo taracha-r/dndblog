@@ -20,5 +20,5 @@ from dndblog import views as dndblog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello', dndblog_views.hello),
+    path('', dndblog_views.index),
 ]

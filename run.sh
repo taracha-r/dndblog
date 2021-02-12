@@ -1,6 +1,4 @@
 #!/bin/bash
-echo $PWD
-echo ls 
 if [ "$WAIT_FOR_DB" = "1" ]; then
 	/app/deploy/wait_for_db.sh
 fi
